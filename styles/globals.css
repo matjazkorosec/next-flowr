@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0, 88%, 64%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-ubuntu;
+  }
+}
+
+/* mobile menu fix */
+
+html,
+body,
+:root {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  scroll-padding: 0;
+}
+
+.mobile-overflow {
+  @apply !overflow-y-hidden lg:!overflow-y-auto select-none overscroll-x-none touch-none;
+}
+
+.adapt {
+  @apply max-w-[1180px] mx-auto px-5;
+}
+
+/* header */
+
+.header {
+  @apply w-full z-50 shadow-header lg:mb-5;
+}
+
+.header .adapt {
+  @apply h-20 flex justify-between items-center bg-background;
+}
+
+.header.menu-opened {
+  @apply fixed top-0 left-0 right-0 lg:relative;
+}
+
+.header.menu-opened + .main {
+  @apply mt-20 lg:mt-0;
+}
+
+/* hamburger */
+
+.hamburger {
+  @apply h-4 w-6 z-20 flex flex-col justify-between cursor-pointer lg:hidden;
+}
+
+.hamburger span {
+  @apply block h-[1px] w-full bg-gray-75;
+}
+
+.line1 {
+  @apply origin-[0_0] transition-transform;
+}
+
+.line2 {
+  @apply transition-transform;
+}
+
+.line3 {
+  @apply origin-[0_100%] transition-transform;
+}
+
+.menu-opened .hamburger {
+  @apply h-6;
+}
+
+.menu-opened .hamburger span {
+  @apply w-5;
+}
+
+.menu-opened .line1 {
+  transform: rotate(45deg) translateX(6px);
+}
+
+.menu-opened .line2 {
+  @apply scale-y-0;
+}
+
+.menu-opened .line3 {
+  transform: rotate(-45deg) translateX(6px);
+}
+
+/* menu */
+
+.navigation {
+  @apply pt-20 px-5 lg:p-0 lg:flex lg:flex-row lg:items-center;
+}
+
+.menu {
+  @apply absolute top-20 left-0 right-0 h-[calc(100vh-80px)] bg-background -translate-x-full overflow-y-auto transition-transform 
+  lg:static lg:h-auto lg:transform-none lg:transition-none lg:overflow-visible;
+}
+
+.menu-opened .menu {
+  @apply translate-x-0;
+}
+
+.navigation {
+  @apply pt-20 px-5 lg:p-0 lg:flex lg:flex-row lg:items-center;
+}
+
+.navigation li {
+  @apply pb-10 text-sm leading-[22px] font-montserrat font-medium lg:pb-0 lg:px-[30px];
+}
+
+.navigation a {
+  @apply py-[5px] px-2 lg:px-0 no-underline text-foreground inline-block text-base-50 hover:text-base-75;
+}
+
+.navigation .login {
+  @apply text-peach-75 hover:text-peach-50;
+}
+
+.navigation .make-button {
+  @apply bg-shoot-gradient text-white shadow-shoot-gradient rounded-[18px] py-[9px] px-[27px] hover:bg-shoot-gradient-hover hover:text-white;
+}
+
+.navigation .profile {
+  @apply flex flex-row items-center gap-4;
+}
+
+/* home-hero */
+
+.home-hero {
+  @apply bg-cover bg-center bg-no-repeat h-[500px] flex flex-col items-center justify-center;
+}
+
+.content {
+  @apply -mt-12 md:-mt-2 lg:-mt-12 pb-8 lg:pb-6 text-center;
+}
+
+.content h1 {
+  @apply mb-6 lg:mb-4 text-[40px] leading-[40px] font-ubuntu lg:font-montserrat font-light lg:font-semibold text-base-0;
+}
+
+.content span {
+  @apply block md:inline;
+}
+
+.content p {
+  @apply pb-5 text-[17px] leading-[17px] text-base-0 opacity-70;
+}
+
+/* form-search */
+
+.form-search {
+  @apply text-center;
+}
+
+.form-search fieldset {
+  @apply mx-auto relative max-w-[310px] md:max-w-[600px];
+}
+
+.search-field {
+  @apply p-[18px] text-sm lg:text-lg lg:p-[21px] font-light w-full transition rounded-sm border-none focus:outline-none focus:shadow-search-input;
+}
+
+.search-icon {
+  @apply bg-center bg-no-repeat bg-base-0 bg-[size:20px_20px] absolute top-[14px] right-[12px] lg:top-[22px] lg:right-[16px] w-7 h-7 text-transparent cursor-pointer;
+}
+
+/* item-list */
+
+.item-list {
+  @apply pt-10 pb-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:pt-[70px] lg:pb-10 gap-x-5 gap-y-5;
+}
+
+.item-list li {
+  @apply relative overflow-hidden;
+}
+
+.item-list img {
+  @apply w-full h-auto rounded-sm;
+}
+
+.item-list .figcaption {
+  @apply absolute left-0 bottom-0 w-full text-base-0 p-5 text-center rounded-b-sm bg-photo-shade;
+}
+
+.item-list h3 {
+  @apply text-xl font-normal;
+}
+
+.item-list p {
+  @apply hidden xs:block mb-[15px] text-xs italic;
+}
+
+.sightings-count {
+  @apply py-2 px-[13px] rounded-[20px] bg-[rgba(0,_0,_0,_0.5)] text-xs whitespace-nowrap;
+}
+
+.star {
+  @apply absolute top-5 right-5 rounded-[15px] w-[30px] h-[30px] shadow-star bg-background;
+}
+
+.star.favorite {
+  @apply bg-shoot-gradient;
+}
+
+.star > span {
+  @apply block w-[30px] h-[30px] bg-center bg-no-repeat;
+}
+
+/* forms */
+
+.two-cols {
+  @apply flex flex-row gap-2 justify-between;
+}
+
+.inside-label {
+  @apply relative;
+}
+
+.inside-label label {
+  @apply text-2xs text-gray-75 absolute left-[15px] top-[12px];
+}
+
+.two-cols .inside-label label {
+  @apply top-[20px];
+}
+
+.inside-label input {
+  @apply h-[50px] pb-0 pt-[15px] px-[15px] text-[13px] rounded-sm shadow-none bg-gray-25 text-gray-90;
+}
+
+.submit {
+  @apply bg-shoot-gradient text-white shadow-shoot-gradient rounded-sm w-full h-[50px] text-sm hover:bg-shoot-gradient-hover hover:text-white;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-10px);
+  }
+  40%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  @apply animate-none;
+  animation: shake 0.5s ease-in-out;
+}
+
+.error-message {
+  @apply text-destructive text-sm font-medium text-center mb-4;
+}
+
+/* user-profile */
+
+.user-profile {
+  @apply pt-8 sm:px-[60px];
+}
+
+.user-profile img {
+  @apply w-20 h-20;
+}
+
+.avatar {
+  @apply mb-[34px] flex flex-wrap flex-row items-center;
+}
+
+.avatar img {
+  @apply ml-[18px] mr-5 w-20 h-20 rounded-full;
+}
+
+.avatar h3 {
+  @apply text-[25px] leading-[25px] text-gray-90 font-light;
+}
+
+.avatar p {
+  @apply text-[13px] text-gray-75;
+}
+
+.avatar p + p {
+  @apply pl-[15px] pr-[30px];
+}
+
+.personal-data {
+  @apply px-[18px] mb-[30px];
+}
+
+.personal-data dt {
+  @apply mb-[10px] inline-block not-italic text-2xs font-light text-gray-75;
+}
+
+.personal-data dd {
+  @apply mb-5 text-[18px] leading-[18px] font-normal text-base-75;
+}
+
+.actions {
+  @apply pt-10 pb-[30px] w-full block text-center;
+}
+
+.actions .make-button {
+  @apply min-w-[150px] py-[15] px-[31px] text-sm font-medium bg-shoot-gradient text-white shadow-shoot-gradient rounded-sm hover:bg-shoot-gradient-hover h-[50px];
+}

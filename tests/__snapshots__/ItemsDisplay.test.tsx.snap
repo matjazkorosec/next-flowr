@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemsDisplay Component Should match the snapshot for loaded flowers 1`] = `
+<div>
+  <section
+    class="items-display"
+  >
+    <div
+      class="adapt"
+    >
+      <ul
+        class="item-list"
+      >
+        <li>
+          <figure>
+            <img
+              alt="Roza"
+              data-nimg="1"
+              decoding="async"
+              height="337"
+              src="/_next/image?url=%2Fimg.jpg&w=640&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=384&q=75 1x, /_next/image?url=%2Fimg.jpg&w=640&q=75 2x"
+              style="color: transparent; width: 100%; height: auto;"
+              width="270"
+            />
+            <div
+              class="figcaption"
+            >
+              <h3>
+                Roza
+              </h3>
+              <p />
+              <span
+                class="sightings-count"
+              >
+                2
+                 sightings
+              </span>
+            </div>
+          </figure>
+          <button
+            class="star "
+          >
+            <span
+              style="background-image: url(/img.jpg);"
+            >
+              <span
+                class="sr-only"
+              >
+                Make favorite
+              </span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <figure>
+            <img
+              alt="Kopriva"
+              data-nimg="1"
+              decoding="async"
+              height="337"
+              src="/_next/image?url=%2Fimg.jpg&w=640&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=384&q=75 1x, /_next/image?url=%2Fimg.jpg&w=640&q=75 2x"
+              style="color: transparent; width: 100%; height: auto;"
+              width="270"
+            />
+            <div
+              class="figcaption"
+            >
+              <h3>
+                Kopriva
+              </h3>
+              <p />
+              <span
+                class="sightings-count"
+              >
+                4
+                 sightings
+              </span>
+            </div>
+          </figure>
+          <button
+            class="star "
+          >
+            <span
+              style="background-image: url(/img.jpg);"
+            >
+              <span
+                class="sr-only"
+              >
+                Make favorite
+              </span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`ItemsDisplay Component Should match the snapshot for no user logged in 1`] = `
+<div>
+  <section
+    class="items-display"
+  >
+    <div
+      class="adapt"
+    >
+      <ul
+        class="item-list"
+      >
+        <li>
+          <figure>
+            <img
+              alt="Roza"
+              data-nimg="1"
+              decoding="async"
+              height="337"
+              src="/_next/image?url=%2Fimg.jpg&w=640&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=384&q=75 1x, /_next/image?url=%2Fimg.jpg&w=640&q=75 2x"
+              style="color: transparent; width: 100%; height: auto;"
+              width="270"
+            />
+            <div
+              class="figcaption"
+            >
+              <h3>
+                Roza
+              </h3>
+              <p />
+              <span
+                class="sightings-count"
+              >
+                2
+                 sightings
+              </span>
+            </div>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img
+              alt="Kopriva"
+              data-nimg="1"
+              decoding="async"
+              height="337"
+              src="/_next/image?url=%2Fimg.jpg&w=640&q=75"
+              srcset="/_next/image?url=%2Fimg.jpg&w=384&q=75 1x, /_next/image?url=%2Fimg.jpg&w=640&q=75 2x"
+              style="color: transparent; width: 100%; height: auto;"
+              width="270"
+            />
+            <div
+              class="figcaption"
+            >
+              <h3>
+                Kopriva
+              </h3>
+              <p />
+              <span
+                class="sightings-count"
+              >
+                4
+                 sightings
+              </span>
+            </div>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "a7899b17-dd6b-47f1-97e4-65061b268d02",
+    "email": "email@email.com",
+    "firstName": "asdasdasda",
+    "lastName": "adsadasdasda",
+    "dateOfBirth": "2025-02-15",
+    "password": "12345678",
+    "accessToken": "fake-token-ac99262d-44e0-4e73-83c1-c6dc6fc82c30"
+  }
+]
