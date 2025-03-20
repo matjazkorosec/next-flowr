@@ -1,4 +1,4 @@
-# FlowrSpot
+# Next-Flowr
 
 A Next.js web application designed to help users explore and discover various flowers in their surroundings.
 
